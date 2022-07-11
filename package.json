@@ -1,0 +1,20 @@
+{
+  "name": "zyfer",
+  "version": "1.0.2",
+  "description": "Cancelling bad designs with the Xnyder's web framework. Build beautiful and responsive website quickly. Ready to use customized components with powerful JavaScript plugins to bring your website to life.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xnydertech/zyfer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xnydertech/zyfer/issues"
+  },
+  "homepage": "https://github.com/xnydertech/zyfer#readme"
+}
