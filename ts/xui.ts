@@ -1,5 +1,5 @@
 let loadingScreen = () => {
-    let loader = document.querySelector(".xui-loader");
+    let loader = document.querySelector<HTMLElement>(".xui-loader");
     if (loader !== null) {
         loader.style.display = "flex";
     }
@@ -17,8 +17,8 @@ let loadingScreen = () => {
 };
 let hideSkeleton = () => {
     setTimeout(function () {
-        let xuiSkeleton = document.querySelectorAll(".xui--skeleton");
-        let xuiSkeletonBtnSmall = document.querySelectorAll(".xui--skeleton-btn-small");
+        let xuiSkeleton = document.querySelectorAll<HTMLElement>(".xui--skeleton");
+        let xuiSkeletonBtnSmall = document.querySelectorAll<HTMLElement>(".xui--skeleton-btn-small");
         for (let i = 0; i < xuiSkeleton.length; i++) {
             xuiSkeleton[i].classList.add("hidden");
         }
@@ -29,42 +29,42 @@ let hideSkeleton = () => {
 };
 let modal = () => {
     document.onclick = function (e) {
-        const target = e.target;
+        const target = e.target as HTMLElement;
         let modalOpen = target.getAttribute("xui-modal-open");
         let modalClose = target.getAttribute("xui-modal-close");
         if (modalOpen !== null) {
-            let xuiModalOpen = document.querySelector('[xui-modal="' + modalOpen + '"]');
+            let xuiModalOpen = document.querySelector<HTMLElement>('[xui-modal="' + modalOpen + '"]');
             if (xuiModalOpen !== null) {
                 xuiModalOpen.style.transform = "scale(1)";
             }
-            let xuiBody = document.querySelector('body');
+            let xuiBody = document.querySelector<HTMLElement>('body');
             if (xuiBody !== null) {
                 xuiBody.style.overflow = "hidden";
             }
         }
         if (modalClose !== null) {
-            let xuiModalClose = document.querySelector('[xui-modal="' + modalClose + '"]');
+            let xuiModalClose = document.querySelector<HTMLElement>('[xui-modal="' + modalClose + '"]');
             if (xuiModalClose !== null) {
                 xuiModalClose.style.transform = "scale(0)";
             }
-            let xuiBody = document.querySelector('body');
+            let xuiBody = document.querySelector<HTMLElement>('body');
             if (xuiBody !== null) {
                 xuiBody.style.overflow = "auto";
             }
         }
     };
-    let modals = document.querySelectorAll('.xui-modal');
+    let modals = document.querySelectorAll<HTMLElement>('.xui-modal');
     setInterval(() => {
         for (var i = 0; i < modals.length; i++) {
             let display = modals[i].style.transform;
             if (display === "scale(1)") {
-                let xuiBody = document.querySelector('body');
+                let xuiBody = document.querySelector<HTMLElement>('body');
                 if (xuiBody !== null) {
                     xuiBody.style.overflow = "hidden";
                 }
             }
             else {
-                let xuiBody = document.querySelector('body');
+                let xuiBody = document.querySelector<HTMLElement>('body');
                 if (xuiBody !== null) {
                     xuiBody.style.overflow = "auto";
                 }
@@ -72,25 +72,25 @@ let modal = () => {
         }
     }, 2000);
 };
-let isHidden = (el) => {
+let isHidden = (el : any) => {
     var style = window.getComputedStyle(el);
     return (style.display === 'none');
 };
 let accordion = () => {
-    let accordionHeaders = document.querySelectorAll('.xui-accordion-box .xui-accordion-header');
+    let accordionHeaders = document.querySelectorAll<HTMLElement>('.xui-accordion-box .xui-accordion-header');
     for (var i = 0; i < accordionHeaders.length; i++) {
         accordionHeaders[i].addEventListener('click', ((j) => {
             return function () {
-                let accordionHeader = document.querySelectorAll('.xui-accordion-box .xui-accordion-header')[j];
-                let accordionIconOpen = accordionHeader.querySelector(".xui-accordion-box .xui-accordion-header .xui-accordion-header-icon-open");
-                let accordionIconClose = accordionHeader.querySelector(".xui-accordion-box .xui-accordion-header .xui-accordion-header-icon-close");
-                let accordionContent = document.querySelectorAll('.xui-accordion-box .xui-accordion-content')[j];
+                let accordionHeader = document.querySelectorAll<HTMLElement>('.xui-accordion-box .xui-accordion-header')[j];
+                let accordionIconOpen = accordionHeader.querySelector<HTMLElement>(".xui-accordion-box .xui-accordion-header .xui-accordion-header-icon-open");
+                let accordionIconClose = accordionHeader.querySelector<HTMLElement>(".xui-accordion-box .xui-accordion-header .xui-accordion-header-icon-close");
+                let accordionContent = document.querySelectorAll<HTMLElement>('.xui-accordion-box .xui-accordion-content')[j];
                 if (isHidden(accordionContent)) {
-                    let accordionBoxes = document.querySelectorAll('.xui-accordion-box');
+                    let accordionBoxes = document.querySelectorAll<HTMLElement>('.xui-accordion-box');
                     for (var k = 0; k < accordionBoxes.length; k++) {
-                        let accordionIconOpen = accordionBoxes[k].querySelector(".xui-accordion-header .xui-accordion-header-icon-open");
-                        let accordionIconClose = accordionBoxes[k].querySelector(".xui-accordion-header .xui-accordion-header-icon-close");
-                        let accordionContent = accordionBoxes[k].querySelector('.xui-accordion-content');
+                        let accordionIconOpen = accordionBoxes[k].querySelector<HTMLElement>(".xui-accordion-header .xui-accordion-header-icon-open");
+                        let accordionIconClose = accordionBoxes[k].querySelector<HTMLElement>(".xui-accordion-header .xui-accordion-header-icon-close");
+                        let accordionContent = accordionBoxes[k].querySelector<HTMLElement>('.xui-accordion-content');
                         if (accordionIconOpen !== null) {
                             accordionIconOpen.style.display = "inline-block";
                         }
@@ -112,11 +112,11 @@ let accordion = () => {
                     }
                 }
                 else {
-                    let accordionBoxes = document.querySelectorAll('.xui-accordion-box');
+                    let accordionBoxes = document.querySelectorAll<HTMLElement>('.xui-accordion-box');
                     for (var k = 0; k < accordionBoxes.length; k++) {
-                        let accordionIconOpen = accordionBoxes[k].querySelector(".xui-accordion-header .xui-accordion-header-icon-open");
-                        let accordionIconClose = accordionBoxes[k].querySelector(".xui-accordion-header .xui-accordion-header-icon-close");
-                        let accordionContent = accordionBoxes[k].querySelector('.xui-accordion-content');
+                        let accordionIconOpen = accordionBoxes[k].querySelector<HTMLElement>(".xui-accordion-header .xui-accordion-header-icon-open");
+                        let accordionIconClose = accordionBoxes[k].querySelector<HTMLElement>(".xui-accordion-header .xui-accordion-header-icon-close");
+                        let accordionContent = accordionBoxes[k].querySelector<HTMLElement>('.xui-accordion-content');
                         if (accordionIconOpen !== null) {
                             accordionIconOpen.style.display = "inline-block";
                         }
@@ -133,14 +133,14 @@ let accordion = () => {
     }
 };
 let alerts = () => {
-    let alertBoxesClose = document.querySelectorAll('.xui-alert .xui-alert-close');
+    let alertBoxesClose = document.querySelectorAll<HTMLElement>('.xui-alert .xui-alert-close');
     for (var i = 0; i < alertBoxesClose.length; i++) {
         alertBoxesClose[i].addEventListener('click', ((j) => {
             return function () {
-                let alertBox = document.querySelectorAll('.xui-alert')[j];
+                let alertBox = document.querySelectorAll<HTMLElement>('.xui-alert')[j];
                 let alertBoxAnimation = alertBox.classList.contains('xui-anime');
                 if (alertBoxAnimation) {
-                    let animationDuration = alertBox.getAttribute("xui-anime-duration");
+                    let animationDuration : any = alertBox.getAttribute("xui-anime-duration");
                     if ((animationDuration !== null) && (animationDuration !== "")) {
                         alertBox.style.transition = animationDuration + "s";
                         alertBox.classList.remove("xui-anime");
@@ -166,9 +166,9 @@ let alerts = () => {
 let navbarMenu = () => {
     let xuiNavbar = document.getElementsByClassName('xui-navbar');
     if (xuiNavbar.length > 0) {
-        let xuiNavbarMenu = document.querySelector(".xui-navbar .menu");
-        let xuiNavbarLinksMain = document.querySelector(".xui-navbar .links .main");
-        let xuiNavbarLinksUrl = document.querySelectorAll(".xui-navbar .links a");
+        let xuiNavbarMenu = document.querySelector<HTMLElement>(".xui-navbar .menu");
+        let xuiNavbarLinksMain = document.querySelector<HTMLElement>(".xui-navbar .links .main");
+        let xuiNavbarLinksUrl = document.querySelectorAll<HTMLElement>(".xui-navbar .links a");
         if (xuiNavbarMenu !== null) {
             xuiNavbarMenu.classList.remove("animate");
             xuiNavbarMenu.addEventListener("click", function (event) {
@@ -184,10 +184,10 @@ let navbarMenu = () => {
         if (xuiNavbarLinksMain !== null) {
             xuiNavbarLinksMain.classList.remove("animate");
         }
-        let newXuiNavbar = document.querySelector('.xui-navbar');
+        let newXuiNavbar = document.querySelector<HTMLElement>('.xui-navbar');
         if (newXuiNavbar !== null) {
             newXuiNavbar.addEventListener('click', (e) => {
-                const target = e.target;
+                const target = e.target as HTMLElement;
                 if (target.closest('.xui-navbar .links .main a')) {
                     let href = target.getAttribute("href");
                     if ((href !== "#") && (href !== "")) {
@@ -205,9 +205,9 @@ let navbarMenu = () => {
 };
 let lazyLoadings = () => {
     (function () {
-        var elements = document.querySelectorAll('[xui-bg-img]');
+        var elements = document.querySelectorAll<HTMLElement>('[xui-bg-img]');
         var index = 0;
-        var lazyLoad = function () {
+        var lazyLoad = function (this: any) {
             if (index >= elements.length)
                 return;
             var item = elements[index];
@@ -228,12 +228,12 @@ let lazyLoadings = () => {
         return init();
     })();
     (function () {
-        let elements = document.querySelectorAll('[xui-img-src]');
+        let elements = document.querySelectorAll<HTMLElement>('[xui-img-src]');
         let index = 0;
-        let lazyLoad = function () {
+        let lazyLoad = function (this: any) {
             if (index >= elements.length)
                 return;
-            var item = elements[index];
+            var item : any = elements[index];
             if ((this.scrollY + this.innerHeight) > item.offsetTop) {
                 var src = item.getAttribute("xui-img-src");
                 item.src = src;
@@ -251,14 +251,14 @@ let lazyLoadings = () => {
         return init();
     })();
 };
-let anime = (customDefinition) => {
+let anime = (customDefinition : any) => {
     let xuiCustom = customDefinition;
     if (xuiCustom !== undefined) {
-        let el = document.querySelector('[xui-custom="' + xuiCustom + '"]');
+        let el = document.querySelector<HTMLElement>('[xui-custom="' + xuiCustom + '"]');
         if (el !== null) {
             let elPlaced = el.getAttribute("xui-placed");
-            let elAnimateReverse = el.getAttribute("xui-anime-reverse");
-            let elAnimateDuration = el.getAttribute("xui-anime-duration");
+            let elAnimateReverse : any = el.getAttribute("xui-anime-reverse");
+            let elAnimateDuration : any = el.getAttribute("xui-anime-duration");
             if ((elAnimateDuration !== null) && (elAnimateDuration !== "")) {
                 el.style.transition = elAnimateDuration + "s";
             }
@@ -294,10 +294,10 @@ let anime = (customDefinition) => {
         console.warn("xui.animate() is missing a parameter");
     }
 };
-let animeStart = (customDefinition) => {
+let animeStart = (customDefinition : any) => {
     let xuiCustom = customDefinition;
     if (xuiCustom !== undefined) {
-        let el = document.querySelector('[xui-custom="' + xuiCustom + '"]');
+        let el = document.querySelector<HTMLElement>('[xui-custom="' + xuiCustom + '"]');
         if (el !== null) {
             let elAnimateDuration = el.getAttribute("xui-anime-duration");
             if ((elAnimateDuration !== null) && (elAnimateDuration !== "")) {
@@ -317,10 +317,10 @@ let animeStart = (customDefinition) => {
         console.warn("xui.animate() is missing a parameter");
     }
 };
-let animeEnd = (customDefinition) => {
+let animeEnd = (customDefinition : any) => {
     let xuiCustom = customDefinition;
     if (xuiCustom !== undefined) {
-        let el = document.querySelector('[xui-custom="' + xuiCustom + '"]');
+        let el = document.querySelector<HTMLElement>('[xui-custom="' + xuiCustom + '"]');
         if (el !== null) {
             let elAnimateDuration = el.getAttribute("xui-anime-duration");
             if ((elAnimateDuration !== null) && (elAnimateDuration !== "")) {
@@ -340,7 +340,7 @@ let animeEnd = (customDefinition) => {
         console.warn("xui.animate() is missing a parameter");
     }
 };
-let xuiTypeWriter = (obj) => {
+let xuiTypeWriter = (obj : any) => {
     let quoteArray = obj.words;
     let speed = obj.duration;
     let target = obj.target;
@@ -358,7 +358,7 @@ let xuiTypeWriter = (obj) => {
         delay = 1000;
     }
     if (target !== undefined) {
-        var typeWriterElement = document.querySelector(".xui-effect-typewriter[xui-effect-typewriter=\"" + target + "\"]");
+        var typeWriterElement = document.querySelector<HTMLElement>(".xui-effect-typewriter[xui-effect-typewriter=\"" + target + "\"]");
         if (typeWriterElement) {
             typeWriterElement.innerHTML = typeWriterElement.innerHTML + "<span class=\"xui-effect-typewriter-content\"></span>";
             if (cursor !== undefined) {
@@ -366,10 +366,10 @@ let xuiTypeWriter = (obj) => {
                     typeWriterElement.innerHTML = typeWriterElement.innerHTML + "<span class=\"xui-effect-typewriter-cursor\"></span>";
                 }
             }
-            typeWriterElement = document.querySelector(".xui-effect-typewriter[xui-effect-typewriter=\"" + target + "\"] span.xui-effect-typewriter-content");
+            typeWriterElement = document.querySelector<HTMLElement>(".xui-effect-typewriter[xui-effect-typewriter=\"" + target + "\"] span.xui-effect-typewriter-content");
             var textArray = quoteArray;
             // function to generate the backspace effect
-            let delWriter = (text, i, cb) => {
+            let delWriter = (text : string, i : number, cb : any) => {
                 if (i >= 0) {
                     if (typeWriterElement !== null) {
                         typeWriterElement.innerHTML = text.substring(0, i--);
@@ -385,7 +385,7 @@ let xuiTypeWriter = (obj) => {
                 }
             };
             // function to generate the keyhitting effect
-            let typeWriter = (text, i, cb) => {
+            let typeWriter = (text : string, i : number, cb : any) => {
                 if (textArray.length > 1) {
                     if (i < text.length + 1) {
                         if (typeWriterElement !== null) {
@@ -415,11 +415,11 @@ let xuiTypeWriter = (obj) => {
                         }, speed);
                     }
                     else if (i === text.length + 1) {
-                        let typeWriterEffectTarget = document.querySelector(".xui-effect-typewriter[xui-effect-typewriter=\"" + target + "\"]");
+                        let typeWriterEffectTarget = document.querySelector<HTMLElement>(".xui-effect-typewriter[xui-effect-typewriter=\"" + target + "\"]");
                         if (typeWriterEffectTarget !== null) {
                             typeWriterEffectTarget.classList.add("xui-effect-typewriter-ready");
                         }
-                        let typeWriterEffectCursor = document.querySelector(".xui-effect-typewriter[xui-effect-typewriter=\"" + target + "\"] span.xui-effect-typewriter-cursor");
+                        let typeWriterEffectCursor = document.querySelector<HTMLElement>(".xui-effect-typewriter[xui-effect-typewriter=\"" + target + "\"] span.xui-effect-typewriter-cursor");
                         if (typeWriterEffectCursor !== null) {
                             typeWriterEffectCursor.style.display = "none";
                         }
@@ -427,7 +427,7 @@ let xuiTypeWriter = (obj) => {
                 }
             };
             // the main writer function
-            let StartWriter = (i) => {
+            let StartWriter = (i : any) => {
                 if (typeof textArray[i] == "undefined") {
                     setTimeout(function () {
                         StartWriter(0);
@@ -461,21 +461,21 @@ let xuiTypeWriter = (obj) => {
 };
 let scrollOnAnimation = () => {
     // Check if xui-aos is available in the body tag
-    let xuiBody = document.querySelector("body");
+    let xuiBody = document.querySelector<HTMLElement>("body");
     if (xuiBody !== null) {
         let xuiAOSCheck = xuiBody.classList.contains('xui-aos');
         if (xuiAOSCheck) {
-            let metaViewPort = document.querySelector("meta[name=\"viewport\"]");
+            let metaViewPort = document.querySelector<HTMLElement>("meta[name=\"viewport\"]");
             if (metaViewPort !== null) {
                 metaViewPort.setAttribute("content", "width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no");
             }
         }
         if ('IntersectionObserver' in window) {
-            let xuiScroll = (ele, repeat, rootMargin) => {
-                let observer = new IntersectionObserver(function (entries) {
+            let xuiScroll = (ele : any, repeat : any, rootMargin : any) => {
+                let observer = new IntersectionObserver(function (entries : any) {
                     let deviceWidth = window.outerWidth;
-                    let duration;
-                    let delay;
+                    let duration : any;
+                    let delay : any;
                     if ((deviceWidth > 576) && (deviceWidth < 768)) {
                         duration = entries[0].target.getAttribute("xui-sm-aos-duration");
                         if (duration === 0) {
@@ -615,7 +615,7 @@ let scrollOnAnimation = () => {
                 }, { rootMargin: rootMargin, threshold: 0 });
                 observer.observe(ele);
             };
-            let xuiAOS = document.querySelectorAll("[xui-aos]");
+            let xuiAOS = document.querySelectorAll<HTMLElement>("[xui-aos]");
             for (var i = 0; i < xuiAOS.length; i++) {
                 var offset;
                 let deviceWidth = window.outerWidth;
@@ -679,7 +679,7 @@ let scrollOnAnimation = () => {
 };
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     // dark mode
-    let qs = document.querySelector("[xui-mode=\"auto\"]");
+    let qs = document.querySelector<HTMLElement>("[xui-mode=\"auto\"]");
     if (qs !== null) {
         qs.classList.add("xui-dark-mode");
     }
@@ -687,13 +687,13 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
     const newColorScheme = event.matches ? "dark" : "light";
     if (newColorScheme == "dark") {
-        let xuiModeAuto = document.querySelector("[xui-mode=\"auto\"]");
+        let xuiModeAuto = document.querySelector<HTMLElement>("[xui-mode=\"auto\"]");
         if (xuiModeAuto !== null) {
             xuiModeAuto.classList.add("xui-dark-mode");
         }
     }
     else {
-        let xuiModeAuto = document.querySelector("[xui-mode=\"auto\"]");
+        let xuiModeAuto = document.querySelector<HTMLElement>("[xui-mode=\"auto\"]");
         if (xuiModeAuto !== null) {
             xuiModeAuto.classList.remove("xui-dark-mode");
         }
@@ -718,18 +718,18 @@ let xui = {
         }
     },
     animate: {
-        default: (custom) => {
+        default: (custom : any) => {
             anime(custom);
         },
-        start: (custom) => {
+        start: (custom : any) => {
             animeStart(custom);
         },
-        end: (custom) => {
+        end: (custom : any) => {
             animeEnd(custom);
         }
     },
     effect: {
-        typewriter: (obj) => {
+        typewriter: (obj : any) => {
             if ((obj === undefined) || (obj === null)) {
                 console.warn("Parse an object");
             }
@@ -747,14 +747,14 @@ let xui = {
         }
     },
     modal: {
-        show: (name) => {
-            let modalName = document.querySelector("[xui-modal=\"" + name + "\"]");
+        show: (name : string) => {
+            let modalName = document.querySelector<HTMLElement>("[xui-modal=\"" + name + "\"]");
             if (modalName !== null) {
                 modalName.style.transform = "scale(1)";
             }
         },
-        hide: (name) => {
-            let modalName = document.querySelector("[xui-modal=\"" + name + "\"]");
+        hide: (name : string) => {
+            let modalName = document.querySelector<HTMLElement>("[xui-modal=\"" + name + "\"]");
             if (modalName !== null) {
                 modalName.style.transform = "scale(0)";
             }
@@ -763,11 +763,11 @@ let xui = {
 };
 // For modules usage
 let autoRun = () => {
-    let body = document.querySelector("body");
-    if (body !== null) {
+    let body = document.querySelector<HTMLElement>("body");
+    if(body !== null){
         let xuiRun = body.getAttribute("xui-run");
-        if (xuiRun !== null) {
-            if (xuiRun !== "true") {
+        if(xuiRun !== null){
+            if(xuiRun !== "true"){
                 xui.run();
                 xui.control.navbar();
             }
@@ -777,6 +777,6 @@ let autoRun = () => {
             xui.control.navbar();
         }
     }
-};
+}
 // Always Run THIS
 autoRun();
