@@ -1,6 +1,6 @@
 {
   "name": "zyfer",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "Cancelling bad designs with the Xnyder's web framework. Build beautiful and responsive website quickly. Ready to use customized components with powerful JavaScript plugins to bring your website to life.",
   "main": "index.js",
   "scripts": {

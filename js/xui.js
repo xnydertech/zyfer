@@ -1,3 +1,4 @@
+"use strict";
 let loadingScreen = () => {
     let loader = document.querySelector(".xui-loader");
     if (loader !== null) {
@@ -211,7 +212,7 @@ let lazyLoadings = () => {
             if (index >= elements.length)
                 return;
             var item = elements[index];
-            if ((this.scrollY + this.innerHeight) > item.offsetTop) {
+            if ((window.scrollY + window.innerHeight) > item.offsetTop) {
                 var src = item.getAttribute("xui-bg-img");
                 item.style.backgroundImage = "url('" + src + "')";
                 item.addEventListener('load', function () {
@@ -234,7 +235,7 @@ let lazyLoadings = () => {
             if (index >= elements.length)
                 return;
             var item = elements[index];
-            if ((this.scrollY + this.innerHeight) > item.offsetTop) {
+            if ((window.scrollY + window.innerHeight) > item.offsetTop) {
                 var src = item.getAttribute("xui-img-src");
                 item.src = src;
                 item.addEventListener('load', function () {

@@ -207,11 +207,11 @@ let lazyLoadings = () => {
     (function () {
         var elements = document.querySelectorAll<HTMLElement>('[xui-bg-img]');
         var index = 0;
-        var lazyLoad = function (this: any) {
+        var lazyLoad = function () {
             if (index >= elements.length)
                 return;
             var item = elements[index];
-            if ((this.scrollY + this.innerHeight) > item.offsetTop) {
+            if ((window.scrollY + window.innerHeight) > item.offsetTop) {
                 var src = item.getAttribute("xui-bg-img");
                 item.style.backgroundImage = "url('" + src + "')";
                 item.addEventListener('load', function () {
@@ -230,11 +230,11 @@ let lazyLoadings = () => {
     (function () {
         let elements = document.querySelectorAll<HTMLElement>('[xui-img-src]');
         let index = 0;
-        let lazyLoad = function (this: any) {
+        let lazyLoad = function () {
             if (index >= elements.length)
                 return;
             var item : any = elements[index];
-            if ((this.scrollY + this.innerHeight) > item.offsetTop) {
+            if ((window.scrollY + window.innerHeight) > item.offsetTop) {
                 var src = item.getAttribute("xui-img-src");
                 item.src = src;
                 item.addEventListener('load', function () {
@@ -699,7 +699,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', eve
         }
     }
 });
-let xui = {
+export let xui = {
     run: () => {
         lazyLoadings();
         hideSkeleton();
