@@ -762,3 +762,53 @@ let xui = {
         }
     }
 };
+// For modules usage
+let autoRun = () => {
+    let body = document.querySelector("body");
+    let xuiRun = body.getAttribute("xui-run");
+    if(xuiRun !== null){
+        if(xuiRun !== "true"){
+            xui.run();
+            xui.control.navbar();
+        }
+    }
+    else {
+        xui.run();
+        xui.control.navbar();
+    }
+}
+let xuiRun = () => {
+    xui.run();
+}
+let xuiControlNavbar = () => {
+    xui.control.navbar();
+}
+let xuiControlLoader = () => {
+    xui.control.loader();
+}
+let xuiAnimateDefault = (custom) => {
+    xui.animate.default(custom);
+}
+let xuiAnimateStart = (custom) => {
+    xui.animate.start(custom);
+}
+let xuiAnimateEnd = (custom) => {
+    xui.animate.end(custom);
+}
+let xuiEffectTypewriter = (obj) => {
+    xui.effect.typewriter(obj);
+}
+let xuiRevealImages = () => {
+    xui.reveal.images();
+}
+let xuiRevealSkeletons = () => {
+    xui.reveal.skeletons();
+}
+let xuiModalShow = (name) => {
+    xui.modal.show(name);
+}
+let xuiModalHide = (name) => {
+    xui.modal.hide(name);
+}
+// Always Run THIS
+autoRun();
