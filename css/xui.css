@@ -920,6 +920,19 @@ img {
   column-span: inherit;
 }
 
+/* Additional Column Support */
+.xui-column > div,
+.xui-column > section,
+.xui-column-support > div,
+.xui-column-support > section {
+  box-sizing: border-box;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  break-inside: avoid-column;
+  counter-increment: brick-counter;
+}
+
 
 
 /*Overflow*/
