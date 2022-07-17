@@ -7495,6 +7495,42 @@ select:-webkit-autofill:focus {
   width: 50px;
 }
 
+.xui-w-55 {
+  width: 55px;
+}
+
+.xui-w-60 {
+  width: 60px;
+}
+
+.xui-w-65 {
+  width: 65px;
+}
+
+.xui-w-70 {
+  width: 70px;
+}
+
+.xui-w-75 {
+  width: 75px;
+}
+
+.xui-w-80 {
+  width: 80px;
+}
+
+.xui-w-85 {
+  width: 85px;
+}
+
+.xui-w-90 {
+  width: 90px;
+}
+
+.xui-w-95 {
+  width: 95px;
+}
+
 .xui-w-100 {
   width: 100px;
 }
@@ -10635,6 +10671,42 @@ select:-webkit-autofill:focus {
 
   .xui-sm-w-50 {
     width: 50px;
+  }
+
+  .xui-sm-w-55 {
+    width: 55px;
+  }
+  
+  .xui-sm-w-60 {
+    width: 60px;
+  }
+  
+  .xui-sm-w-65 {
+    width: 65px;
+  }
+  
+  .xui-sm-w-70 {
+    width: 70px;
+  }
+  
+  .xui-sm-w-75 {
+    width: 75px;
+  }
+  
+  .xui-sm-w-80 {
+    width: 80px;
+  }
+  
+  .xui-sm-w-85 {
+    width: 85px;
+  }
+  
+  .xui-sm-w-90 {
+    width: 90px;
+  }
+  
+  .xui-sm-w-95 {
+    width: 95px;
   }
 
   .xui-sm-w-100 {
@@ -14441,6 +14513,42 @@ select:-webkit-autofill:focus {
     width: 50px;
   }
 
+  .xui-md-w-55 {
+    width: 55px;
+  }
+  
+  .xui-md-w-60 {
+    width: 60px;
+  }
+  
+  .xui-md-w-65 {
+    width: 65px;
+  }
+  
+  .xui-md-w-70 {
+    width: 70px;
+  }
+  
+  .xui-md-w-75 {
+    width: 75px;
+  }
+  
+  .xui-md-w-80 {
+    width: 80px;
+  }
+  
+  .xui-md-w-85 {
+    width: 85px;
+  }
+  
+  .xui-md-w-90 {
+    width: 90px;
+  }
+  
+  .xui-md-w-95 {
+    width: 95px;
+  }
+
   .xui-md-w-100 {
     width: 100px;
   }
@@ -18243,6 +18351,42 @@ select:-webkit-autofill:focus {
 
   .xui-lg-w-50 {
     width: 50px;
+  }
+
+  .xui-lg-w-55 {
+    width: 55px;
+  }
+  
+  .xui-lg-w-60 {
+    width: 60px;
+  }
+  
+  .xui-lg-w-65 {
+    width: 65px;
+  }
+  
+  .xui-lg-w-70 {
+    width: 70px;
+  }
+  
+  .xui-lg-w-75 {
+    width: 75px;
+  }
+  
+  .xui-lg-w-80 {
+    width: 80px;
+  }
+  
+  .xui-lg-w-85 {
+    width: 85px;
+  }
+  
+  .xui-lg-w-90 {
+    width: 90px;
+  }
+  
+  .xui-lg-w-95 {
+    width: 95px;
   }
 
   .xui-lg-w-100 {
@@ -22213,6 +22357,42 @@ select:-webkit-autofill:focus {
 
   .xui-xl-w-50 {
     width: 50px;
+  }
+
+  .xui-xl-w-55 {
+    width: 55px;
+  }
+  
+  .xui-xl-w-60 {
+    width: 60px;
+  }
+  
+  .xui-xl-w-65 {
+    width: 65px;
+  }
+  
+  .xui-xl-w-70 {
+    width: 70px;
+  }
+  
+  .xui-xl-w-75 {
+    width: 75px;
+  }
+  
+  .xui-xl-w-80 {
+    width: 80px;
+  }
+  
+  .xui-xl-w-85 {
+    width: 85px;
+  }
+  
+  .xui-xl-w-90 {
+    width: 90px;
+  }
+  
+  .xui-xl-w-95 {
+    width: 95px;
   }
 
   .xui-xl-w-100 {
