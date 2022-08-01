@@ -5,6 +5,13 @@
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 
+:root {
+  --navbarHeight: 90px;
+  --default-sidebar-width: 220px;
+  --default-sidebar-aside-width: 320px;
+  --default-sidebar-top-height: 75px;
+}
+
 /*Primary Font*/
 @font-face {
 font-family: "font-primary-regular";
@@ -250,10 +257,6 @@ src: url("fonts/others/graphit/bolditalic.otf");
 @font-face {
 font-family: "font-7-black";
 src: url("fonts/others/graphit/black.otf");
-}
-
-:root {
-  --navbarHeight: 90px;
 }
 
 
@@ -3016,7 +3019,11 @@ select:-webkit-autofill:focus {
 .xui-loader,
 .xui-alert,
 .xui-alert .xui-alert-icon,
-.xui-alert .xui-alert-close {
+.xui-alert .xui-alert-close,
+.xui-dashboard .navigator .links .link-box,
+.xui-dashboard .navigator .brand,
+.xui-dashboard .screen nav,
+.xui-dashboard .screen .nav {
   display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
   display: -ms-flexbox;      /* TWEENER - IE 10 */
@@ -3024,6 +3031,15 @@ select:-webkit-autofill:focus {
   display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+}
+
+.xui-dashboard .navigator .links .link-box,
+.xui-dashboard .navigator .brand {
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-jc-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
 .xui-col-1 {
@@ -8050,6 +8066,105 @@ select:-webkit-autofill:focus {
 
 .xui-letter-spacing-initial {
   letter-spacing: initial;
+}
+
+
+
+
+/* Dashboards */
+.xui-dashboard {
+  position: relative;
+}
+
+.xui-dashboard .navigator,
+.xui-dashboard .screen {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+}
+
+.xui-dashboard .navigator {
+  width: var(--default-sidebar-width);
+  left: 0;
+  position: relative;
+  overflow-y: auto;
+}
+
+.xui-dashboard .navigator .brand {
+  height: var(--default-sidebar-top-height);
+}
+
+.xui-dashboard .navigator .links .link-box {
+  min-height: 55px;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  margin: 10px 0;
+}
+
+.xui-dashboard .navigator .links .link-box.active {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.xui-dashboard .navigator .links .link-box .icon {
+  display: contents;
+}
+
+.xui-dashboard .navigator .links .bottom-fixed {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+
+.xui-dashboard .navigator .minified {
+  display: none;
+}
+
+.xui-dashboard .screen {
+  width: -webkit-calc(100% - var(--default-sidebar-width));
+  width: -moz-calc(100% - var(--default-sidebar-width));
+  width: -o-calc(100% - var(--default-sidebar-width));
+  width: calc(100% - var(--default-sidebar-width));
+  left: var(--default-sidebar-width);
+  overflow-y: hidden;
+}
+
+.xui-dashboard .screen > nav,
+.xui-dashboard .screen > .nav {
+  height: var(--default-sidebar-top-height);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.xui-dashboard .screen .content,
+.xui-dashboard .screen .aside {
+  overflow-y: auto;
+}
+
+.xui-dashboard .screen .content {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 110px;
+}
+
+.xui-dashboard .screen[xui-aside="true"] .content {
+  width: calc(100% - var(--default-sidebar-aside-width));
+  top: var(--default-sidebar-top-height);
+}
+
+.xui-dashboard .screen .aside {
+  display: none;
+}
+
+.xui-dashboard .screen[xui-aside="true"] .aside {
+  display: block;
+  width: var(--default-sidebar-aside-width);
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: var(--default-sidebar-top-height);
 }
 
 
