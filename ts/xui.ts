@@ -707,7 +707,6 @@ export let xui = {
         accordion();
         alerts();
         scrollOnAnimation();
-        loadingScreen();
     },
     control: {
         navbar: () => {
