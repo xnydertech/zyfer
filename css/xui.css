@@ -3010,6 +3010,7 @@ select:-webkit-autofill:focus {
 /*Rows & Columns*/
 .xui-row,
 .xui-navbar,
+.xui-navbar .links .menu,
 .xui-pagination,
 .xui-pagination .xui-page-counter .xui-page,
 .xui-pagination .xui-page-counter .xui-page-ellipsis,
@@ -8135,8 +8136,8 @@ select:-webkit-autofill:focus {
   overflow-y: hidden;
 }
 
-.xui-dashboard .screen > nav,
-.xui-dashboard .screen > .nav {
+.xui-dashboard .screen nav,
+.xui-dashboard .screen .nav {
   height: var(--default-sidebar-top-height);
   position: sticky;
   top: 0;
@@ -23661,47 +23662,6 @@ select:-webkit-autofill:focus {
     text-decoration: none;
   }
 
-  .xui-navbar .links .menu {
-    width: 40px;
-    height: 35px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .xui-navbar .links .menu span {
-    width: 25px;
-    height: 1.5px;
-    display: block;
-    background-color: #000000;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transition: .1s;
-  }
-
-  .xui-navbar .links .menu span:nth-child(1) {
-    margin-top: -7px;
-  }
-
-  .xui-navbar .links .menu span:nth-child(3) {
-    margin-top: 7px;
-  }
-
-  .xui-navbar .links .menu.animate span:nth-child(1) {
-    transform: translate(-50%, -50%) rotate(45deg);
-    margin-top: 0;
-  }
-
-  .xui-navbar .links .menu.animate span:nth-child(2) {
-    display: none;
-  }
-
-  .xui-navbar .links .menu.animate span:nth-child(3) {
-    transform: translate(-50%, -50%) rotate(-45deg);
-    margin-top: 0;
-  }
-
   .xui-navbar .links ul li .dropdown {
     padding: 15px 15px;
     width: 100%;
@@ -23727,6 +23687,60 @@ select:-webkit-autofill:focus {
   .xui-navbar.xui-bg-black .links .menu span
   {
     background-color: #FFFFFF;
+  }
+
+  .xui-navbar .links .menu {
+    width: 40px;
+    height: 28px;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .xui-navbar .links .menu span {
+    width: 100%;
+    height: 2.5px;
+    background-color: #000000;
+    transition: .1s;
+  }
+  
+  /* Navbar Menu 2 */
+  .xui-navbar[menu="2"] .links .menu {
+    justify-content: flex-end;
+  }
+  
+  .xui-navbar[menu="2"] .links .menu span:nth-child(2) {
+    display: none;
+  }
+  
+  .xui-navbar[menu="2"] .links .menu span:nth-child(3) {
+    width: 60%;
+  }
+  
+  .xui-navbar .links .menu span {
+    height: 1.5px;
+  }
+  
+  .xui-navbar .links .menu.animate span {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  
+  .xui-navbar .links .menu.animate span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 100%;
+  }
+  
+  .xui-navbar .links .menu.animate span:nth-child(2) {
+    display: none;
+  }
+  
+  .xui-navbar .links .menu.animate span:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 100%;
   }
 
   /* Navbar Customizations */
@@ -23774,7 +23788,7 @@ select:-webkit-autofill:focus {
   }
 
   .xui-navbar[menu="2"] .links .menu.animate {
-    top: 20px;
+    top: 30px;
     right: 20px;
   }
 
@@ -23801,24 +23815,6 @@ select:-webkit-autofill:focus {
   .xui-navbar[menu="2"] .links .menu.animate {
     top: 40px;
     right: 40px;
-  }
-
-  .xui-navbar .links .menu {
-    width: 60px;
-    height: 50px;
-  }
-
-  .xui-navbar .links .menu span {
-    width: 40px;
-    height: 2px;
-  }
-
-  .xui-navbar .links .menu span:nth-child(1) {
-    margin-top: -10px;
-  }
-
-  .xui-navbar .links .menu span:nth-child(3) {
-    margin-top: 10px;
   }
 }
 
