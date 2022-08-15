@@ -23700,13 +23700,15 @@ select:-webkit-autofill:focus {
   
   .xui-navbar .links .menu span {
     width: 100%;
-    height: 2.5px;
+    height: 2px;
     background-color: #000000;
     transition: .1s;
   }
   
   /* Navbar Menu 2 */
   .xui-navbar[menu="2"] .links .menu {
+    width: 35px;
+    height: 20px;
     justify-content: flex-end;
   }
   
@@ -23716,10 +23718,6 @@ select:-webkit-autofill:focus {
   
   .xui-navbar[menu="2"] .links .menu span:nth-child(3) {
     width: 60%;
-  }
-  
-  .xui-navbar .links .menu span {
-    height: 1.5px;
   }
   
   .xui-navbar .links .menu.animate span {
