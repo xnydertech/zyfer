@@ -49,38 +49,28 @@ src: url("fonts/secondary/bold.ttf");
 
 /*Third Font*/
 @font-face {
-font-family: "font-3-regular";
-src: url("fonts/others/value-sans/regular.ttf");
+  font-family: "font-3-bold";
+  src: url("fonts/Erode/Erode-Bold.ttf");
+}
+  
+@font-face {
+  font-family: "font-3-light";
+  src: url("fonts/Erode/Erode-Light.ttf");
+}
+  
+@font-face {
+  font-family: "font-3-medium";
+  src: url("fonts/Erode/Erode-Medium.ttf");
 }
 
 @font-face {
-font-family: "font-3-italic";
-src: url("fonts/others/value-sans/italic.ttf");
+  font-family: "font-3-regular";
+  src: url("fonts/Erode/Erode-Regular.ttf");
 }
 
 @font-face {
-font-family: "font-3-medium";
-src: url("fonts/others/value-sans/medium.ttf");
-}
-
-@font-face {
-font-family: "font-3-mediumitalic";
-src: url("fonts/others/value-sans/mediumitalic.ttf");
-}
-
-@font-face {
-font-family: "font-3-bold";
-src: url("fonts/others/value-sans/bold.ttf");
-}
-
-@font-face {
-font-family: "font-3-bolditalic";
-src: url("fonts/others/value-sans/bolditalic.ttf");
-}
-
-@font-face {
-font-family: "font-3-black";
-src: url("fonts/others/value-sans/black.ttf");
+  font-family: "font-3-semibold";
+  src: url("fonts/Erode/Erode-Semibold.ttf");
 }
 
 /*Fourth Font*/
@@ -218,49 +208,102 @@ src: url("fonts/others/euclid-circular-a/semibolditalic.ttf");
 
 /*Seventh Font*/
 @font-face {
-font-family: "font-7-lightitalic";
-src: url("fonts/others/graphit/lightitalic.otf");
+font-family: "font-7-bold";
+src: url("fonts/Epilogue/Epilogue-Bold.ttf");
 }
 
 @font-face {
 font-family: "font-7-light";
-src: url("fonts/others/graphit/light.otf");
-}
-
-@font-face {
-font-family: "font-7-italic";
-src: url("fonts/others/graphit/italic.otf");
-}
-
-@font-face {
-font-family: "font-7-regular";
-src: url("fonts/others/graphit/regular.otf");
+src: url("fonts/Epilogue/Epilogue-Light.ttf");
 }
 
 @font-face {
 font-family: "font-7-medium";
-src: url("fonts/others/graphit/medium.otf");
+src: url("fonts/Epilogue/Epilogue-Medium.ttf");
 }
 
 @font-face {
-font-family: "font-7-mediumitalic";
-src: url("fonts/others/graphit/mediumitalic.otf");
+font-family: "font-7-regular";
+src: url("fonts/Epilogue/Epilogue-Regular.ttf");
 }
 
 @font-face {
-font-family: "font-7-bold";
-src: url("fonts/others/graphit/bold.otf");
+font-family: "font-7-semibold";
+src: url("fonts/Epilogue/Epilogue-SemiBold.ttf");
 }
 
+/*Eighth Font*/
 @font-face {
-font-family: "font-7-bolditalic";
-src: url("fonts/others/graphit/bolditalic.otf");
-}
+  font-family: "font-8-bold";
+  src: url("fonts/PlusJakartaSans/PlusJakartaSans-Bold.ttf");
+  }
+  
+  @font-face {
+  font-family: "font-8-light";
+  src: url("fonts/PlusJakartaSans/PlusJakartaSans-Light.ttf");
+  }
+  
+  @font-face {
+  font-family: "font-8-medium";
+  src: url("fonts/PlusJakartaSans/PlusJakartaSans-Medium.ttf");
+  }
+  
+  @font-face {
+  font-family: "font-8-regular";
+  src: url("fonts/PlusJakartaSans/PlusJakartaSans-Regular.ttf");
+  }
+  
+  @font-face {
+  font-family: "font-8-semibold";
+  src: url("fonts/PlusJakartaSans/PlusJakartaSans-SemiBold.ttf");
+  }
 
+/*Ninth Font*/
 @font-face {
-font-family: "font-7-black";
-src: url("fonts/others/graphit/black.otf");
-}
+  font-family: "font-9-bold";
+  src: url("fonts/Author/Author-Bold.ttf");
+  }
+  
+  @font-face {
+  font-family: "font-9-light";
+  src: url("fonts/Author/Author-Light.ttf");
+  }
+  
+  @font-face {
+  font-family: "font-9-medium";
+  src: url("fonts/Author/Author-Medium.ttf");
+  }
+  
+  @font-face {
+  font-family: "font-9-regular";
+  src: url("fonts/PlusJakartaSans/PlusJakartaSans-Regular.ttf");
+  }
+  
+  @font-face {
+  font-family: "font-9-semibold";
+  src: url("fonts/Author/Author-Semibold.ttf");
+  }
+
+/*Tenth Font*/
+@font-face {
+  font-family: "font-10-bold";
+  src: url("fonts/Supreme/Supreme-Bold.ttf");
+  }
+  
+  @font-face {
+  font-family: "font-10-light";
+  src: url("fonts/Supreme/Supreme-Light.ttf");
+  }
+  
+  @font-face {
+  font-family: "font-10-medium";
+  src: url("fonts/Supreme/Supreme-Medium.ttf");
+  }
+  
+  @font-face {
+  font-family: "font-10-regular";
+  src: url("fonts/Supreme/Supreme-Regular.ttf");
+  }
 
 
 * {
@@ -314,32 +357,22 @@ body.xui-aos {
   font-family: "font-3-regular" !important;
 }
 
-.xui-font-3 b,
 .xui-font-3-bold,
+.xui-font-3 b,
 .xui-font-3 .xui-font-w-bold {
   font-family: "font-3-bold" !important;
 }
 
-.xui-font-3 i,
-.xui-font-3-italic,
-.xui-font-3 .xui-font-style-italic {
-  font-family: "font-3-italic" !important;
+.xui-font-3-light {
+  font-family: "font-3-light" !important;
 }
 
 .xui-font-3-medium {
   font-family: "font-3-medium" !important;
 }
 
-.xui-font-3-mediumitalic {
-  font-family: "font-3-mediumitalic" !important;
-}
-
-.xui-font-3-bolditalic {
-  font-family: "font-3-bolditalic" !important;
-}
-
-.xui-font-3-black {
-  font-family: "font-3-black" !important;
+.xui-font-3-semibold {
+  font-family: "font-3-semibold" !important;
 }
 
 .xui-font-4,
@@ -458,10 +491,6 @@ body.xui-aos {
   font-family: "font-7-bold" !important;
 }
 
-.xui-font-7-lightitalic {
-  font-family: "font-7-lightitalic" !important;
-}
-
 .xui-font-7-light {
   font-family: "font-7-light" !important;
 }
@@ -470,12 +499,73 @@ body.xui-aos {
   font-family: "font-7-medium" !important;
 }
 
-.xui-font-7-mediumitalic {
-  font-family: "font-7-mediumitalic" !important;
+.xui-font-7-semibold {
+  font-family: "font-7-semibold" !important;
 }
 
-.xui-font-7-black {
-  font-family: "font-7-black" !important;
+.xui-font-8-regular,
+.xui-font-8 {
+  font-family: "font-8-regular" !important;
+}
+
+.xui-font-8-bold,
+.xui-font-8 b,
+.xui-font-8 .xui-font-w-bold {
+  font-family: "font-8-bold" !important;
+}
+
+.xui-font-8-light {
+  font-family: "font-8-light" !important;
+}
+
+.xui-font-8-medium {
+  font-family: "font-8-medium" !important;
+}
+
+.xui-font-8-semibold {
+  font-family: "font-8-semibold" !important;
+}
+
+.xui-font-9-regular,
+.xui-font-9 {
+  font-family: "font-9-regular" !important;
+}
+
+.xui-font-9-bold,
+.xui-font-9 b,
+.xui-font-9 .xui-font-w-bold {
+  font-family: "font-9-bold" !important;
+}
+
+.xui-font-9-light {
+  font-family: "font-9-light" !important;
+}
+
+.xui-font-9-medium {
+  font-family: "font-9-medium" !important;
+}
+
+.xui-font-9-semibold {
+  font-family: "font-9-semibold" !important;
+}
+
+.xui-font-10-regular,
+.xui-font-10 {
+  font-family: "font-10-regular" !important;
+}
+
+.xui-font-10-bold,
+.xui-font-10 b,
+.xui-font-10 .xui-font-w-bold {
+  font-family: "font-10-bold" !important;
+}
+
+.xui-font-10-light {
+  font-family: "font-10-light" !important;
+}
+
+.xui-font-10-medium {
+  font-family: "font-10-medium" !important;
 }
 
 h1,
