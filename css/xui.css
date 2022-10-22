@@ -8247,7 +8247,7 @@ select:-webkit-autofill:focus {
 }
 
 .xui-dashboard .navigator .links .link-box {
-  min-height: 55px;
+  min-height: 70px;
   width: 100%;
   text-decoration: none;
   color: inherit;
