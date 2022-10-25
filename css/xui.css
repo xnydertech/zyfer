@@ -1614,7 +1614,7 @@ img {
 }
 
 .xui-btn-large {
-  padding: 1.2em 3.5em;
+  padding: 1.8em 3.2em;
   font-size: 110%;
 }
 
@@ -8247,7 +8247,7 @@ select:-webkit-autofill:focus {
 }
 
 .xui-dashboard .navigator .links .link-box {
-  min-height: 70px;
+  min-height: 55px;
   width: 100%;
   text-decoration: none;
   color: inherit;
