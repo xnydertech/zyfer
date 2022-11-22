@@ -8054,14 +8054,9 @@ select:-webkit-autofill:focus {
 
 /* Loaders */
 .xui-loader {
-  /* width: 100vw; */
-  /* height: 100vh; */
   overflow-y: auto;
-  /* position: fixed; */
   justify-content: center;
   align-items: center;
-  /* top: 0; */
-  /* left: 0; */
   z-index: 2247483645 !important;
   padding: 1.5rem;
 }
