@@ -16,15 +16,26 @@ let loadingScreen = () => {
         }
     }, 100);
 };
-let hideSkeleton = () => {
+let hideSkeleton = (ele) => {
     setTimeout(function () {
-        let xuiSkeleton = document.querySelectorAll(".xui--skeleton");
-        let xuiSkeletonBtnSmall = document.querySelectorAll(".xui--skeleton-btn-small");
-        for (let i = 0; i < xuiSkeleton.length; i++) {
-            xuiSkeleton[i].classList.add("hidden");
-        }
-        for (let i = 0; i < xuiSkeletonBtnSmall.length; i++) {
-            xuiSkeletonBtnSmall[i].classList.add("hidden");
+        if(ele !== undefined){
+            let xuiSkeleton = document.querySelectorAll(ele + " .xui--skeleton");
+            let xuiSkeletonBtnSmall = document.querySelectorAll(ele + " .xui--skeleton-btn-small");
+            for (let i = 0; i < xuiSkeleton.length; i++) {
+                xuiSkeleton[i].classList.add("hidden");
+            }
+            for (let i = 0; i < xuiSkeletonBtnSmall.length; i++) {
+                xuiSkeletonBtnSmall[i].classList.add("hidden");
+            }
+        } else {
+            let xuiSkeleton = document.querySelectorAll(".xui--skeleton");
+            let xuiSkeletonBtnSmall = document.querySelectorAll(".xui--skeleton-btn-small");
+            for (let i = 0; i < xuiSkeleton.length; i++) {
+                xuiSkeleton[i].classList.add("hidden");
+            }
+            for (let i = 0; i < xuiSkeletonBtnSmall.length; i++) {
+                xuiSkeletonBtnSmall[i].classList.add("hidden");
+            }
         }
     }, 2500);
 };
@@ -741,8 +752,8 @@ let xui = {
         images: () => {
             lazyLoadings();
         },
-        skeletons: () => {
-            hideSkeleton();
+        skeletons: (ele) => {
+            hideSkeleton(ele);
         }
     },
     modal: {
