@@ -703,7 +703,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', eve
 let xui = {
     run: () => {
         lazyLoadings();
-        hideSkeleton();
         modal();
         accordion();
         alerts();
