@@ -180,7 +180,15 @@ let navbarMenu = () => {
     if (xuiNavbar.length > 0) {
         let xuiNavbarMenu = document.querySelector(".xui-navbar .menu");
         let xuiNavbarLinksMain = document.querySelector(".xui-navbar .links .main");
+        let xuiDashboard = document.querySelector(".xui-dashboard");
+        let xuiDashboardAnimate = document.querySelector(".xui-dashboard.animate");
         let xuiNavbarLinksUrl = document.querySelectorAll(".xui-navbar .links a");
+        document.addEventListener("click", function (e) {
+            if(e.target.className.includes('xui-dashboard') && e.target.className.includes('animate')){
+                xuiDashboard.classList.remove("animate");
+                xuiNavbarMenu.classList.remove("animate");
+            }
+        });
         if (xuiNavbarMenu !== null) {
             xuiNavbarMenu.classList.remove("animate");
             xuiNavbarMenu.addEventListener("click", function (event) {
@@ -191,6 +199,7 @@ let navbarMenu = () => {
                 if (xuiNavbarLinksMain !== null) {
                     xuiNavbarLinksMain.classList.toggle("animate");
                 }
+                xuiDashboard.classList.add("animate");
             });
         }
         if (xuiNavbarLinksMain !== null) {
@@ -200,7 +209,7 @@ let navbarMenu = () => {
         if (newXuiNavbar !== null) {
             newXuiNavbar.addEventListener('click', (e) => {
                 const target = e.target;
-                if (target.closest('.xui-navbar .links .main a')) {
+                if (target.closest('.xui-navbar .links .main a') || target.closest('.xui-dashboard .navigator .links a')) {
                     let href = target.getAttribute("href");
                     if ((href !== "#") && (href !== "")) {
                         if (xuiNavbarMenu !== null) {
@@ -208,6 +217,20 @@ let navbarMenu = () => {
                         }
                         if (xuiNavbarLinksMain !== null) {
                             xuiNavbarLinksMain.classList.toggle("animate");
+                        }
+                    }
+                }
+            });
+        }
+        if (xuiDashboard !== null) {
+            xuiDashboard.addEventListener('click', (e) => {
+                const target = e.target;
+                if (target.closest('.xui-dashboard .navigator .links a')) {
+                    let href = target.getAttribute("href");
+                    if ((href !== "#") && (href !== "")) {
+                        if (xuiNavbarMenu !== null) {
+                            xuiNavbarMenu.classList.toggle("animate");
+                            xuiDashboard.classList.toggle("animate");
                         }
                     }
                 }

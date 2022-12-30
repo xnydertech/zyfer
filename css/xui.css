@@ -1307,7 +1307,7 @@ img {
   text-align: right;
 }
 
-.xui-navbar .links .menu {
+.xui-navbar .menu {
   display: none;
 }
 
@@ -25246,7 +25246,7 @@ select:-webkit-autofill:focus {
 
 @media screen and (max-width: 1200px) {
 
-  .xui-navbar .links .menu {
+  .xui-navbar .menu {
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
     display: -ms-flexbox;      /* TWEENER - IE 10 */
@@ -25329,7 +25329,7 @@ select:-webkit-autofill:focus {
     background-color: #FFFFFF;
   }
 
-  .xui-navbar .links .menu {
+  .xui-navbar .menu {
     width: 40px;
     height: 28px;
     position: relative;
@@ -25338,7 +25338,7 @@ select:-webkit-autofill:focus {
     justify-content: center;
   }
   
-  .xui-navbar .links .menu span {
+  .xui-navbar .menu span {
     width: 100%;
     height: 2px;
     background-color: #000000;
@@ -25346,37 +25346,37 @@ select:-webkit-autofill:focus {
   }
   
   /* Navbar Menu 2 */
-  .xui-navbar[menu="2"] .links .menu {
+  .xui-navbar[menu="2"] .menu {
     width: 35px;
     height: 20px;
     justify-content: flex-end;
   }
   
-  .xui-navbar[menu="2"] .links .menu span:nth-child(2) {
+  .xui-navbar[menu="2"] .menu span:nth-child(2) {
     display: none;
   }
   
-  .xui-navbar[menu="2"] .links .menu span:nth-child(3) {
+  .xui-navbar[menu="2"] .menu span:nth-child(3) {
     width: 60%;
   }
   
-  .xui-navbar .links .menu.animate span {
+  .xui-navbar .menu.animate span {
     transform: translate(-50%, -50%);
     position: absolute;
     top: 50%;
     left: 50%;
   }
   
-  .xui-navbar .links .menu.animate span:nth-child(1) {
+  .xui-navbar .menu.animate span:nth-child(1) {
     transform: translate(-50%, -50%) rotate(45deg);
     width: 100%;
   }
   
-  .xui-navbar .links .menu.animate span:nth-child(2) {
+  .xui-navbar .menu.animate span:nth-child(2) {
     display: none;
   }
   
-  .xui-navbar .links .menu.animate span:nth-child(3) {
+  .xui-navbar .menu.animate span:nth-child(3) {
     transform: translate(-50%, -50%) rotate(-45deg);
     width: 100%;
   }
@@ -25425,13 +25425,13 @@ select:-webkit-autofill:focus {
     left: 0;
   }
 
-  .xui-navbar[menu="2"] .links .menu.animate {
+  .xui-navbar[menu="2"] .menu.animate {
     top: 30px;
     right: 20px;
   }
 
   .xui-navbar[menu="2"] .links .main,
-  .xui-navbar[menu="2"] .links .menu.animate {
+  .xui-navbar[menu="2"] .menu.animate {
     z-index: 10;
     position: fixed;
   }
@@ -25442,6 +25442,44 @@ select:-webkit-autofill:focus {
   .xui-alert[xui-placed] {
     max-width: 90%;
   }
+  .xui-dashboard {
+    transition: .25s;
+  }
+  .xui-dashboard.animate {
+    position: relative;
+  }
+  .xui-dashboard .navigator {
+    width: 300px;
+    position: fixed;
+    z-index: 2;
+    left: -100%;
+  }
+  .xui-dashboard.animate .navigator {
+    left: 0;
+  }
+  .xui-dashboard.animate::before {
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    content: '';
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+  }
+  .xui-dashboard .screen {
+    width: 100%;
+    left: 0;
+  }
+  .xui-dashboard .screen .xui-navbar {
+    padding-right: 90px;
+  }
+  .xui-dashboard .screen .xui-navbar .menu {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px){
@@ -25450,7 +25488,7 @@ select:-webkit-autofill:focus {
     padding-right: 40px;
   }
 
-  .xui-navbar[menu="2"] .links .menu.animate {
+  .xui-navbar[menu="2"] .menu.animate {
     top: 40px;
     right: 40px;
   }
@@ -25544,7 +25582,7 @@ select:-webkit-autofill:focus {
   opacity: .5;
 }
 
-.xui-dark-mode .xui-navbar .links .menu span {
+.xui-dark-mode .xui-navbar .menu span {
   background-color: #F1F1F1;
 }
 
