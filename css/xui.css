@@ -8294,7 +8294,7 @@ select:-webkit-autofill:focus {
 .xui-dashboard .screen .content {
   width: 100%;
   height: 100%;
-  padding-bottom: 110px;
+  padding-bottom: 150px;
 }
 
 .xui-dashboard .screen[xui-aside="true"] .content {
