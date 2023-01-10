@@ -1537,6 +1537,32 @@ img {
 
 
 /* Keyframes */
+@keyframes modal {
+  from {
+    top: -3rem;
+    opacity: .1;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes modalOpen {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes modalClose {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
 @keyframes fadeDown {
   0% {
     transform: translateY(-50px);
@@ -6783,7 +6809,10 @@ select:-webkit-autofill:focus {
   background-color: rgba(0, 0, 0, 0.7);
   justify-content: center;
   align-items: center;
-  transform: scale(0);
+  animation-name: modalClose;
+  animation-duration: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .xui-modal-center {
@@ -6822,6 +6851,7 @@ select:-webkit-autofill:focus {
   max-width: 600px;
   width: 100%;
   position: relative;
+  animation-fill-mode: forwards;
 }
 
 
@@ -25194,7 +25224,28 @@ select:-webkit-autofill:focus {
 
 /* Custom Attributes */
 .xui-modal[open="true"] {
-  transform: scale(1);
+  animation-name: modalClose;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+}
+
+.xui-modal[open="false"] {
+  animation-name: modalOpen;
+  animation-delay: .15s;
+  animation-iteration-count: 1;
+}
+
+.xui-modal[open="true"] .xui-modal-content {
+  animation-name: modal;
+  animation-duration: .25s;
+  animation-iteration-count: 1;
+}
+
+.xui-modal[open="false"] .xui-modal-content {
+  animation-name: modal;
+  animation-duration: .25s;
+  animation-iteration-count: 1;
+  animation-direction: reverse;
 }
 
 .xui-alert[xui-placed] {

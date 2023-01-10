@@ -41,13 +41,26 @@ let hideSkeleton = (ele) => {
 };
 let modal = () => {
     document.onclick = function (e) {
+        if(e.target.hasAttribute("xui-modal")){
+            let modals = document.querySelectorAll("[xui-modal]");
+            for(let i = 0; i < modals.length; i++){
+                let modalName = modals[i];
+                if (modalName !== null) {
+                    modalName.removeAttribute("open");
+                    void modalName.offsetWidth;
+                    modalName.setAttribute("open", false);
+                }
+            }
+        }
         const target = e.target;
         let modalOpen = target.getAttribute("xui-modal-open");
         let modalClose = target.getAttribute("xui-modal-close");
         if (modalOpen !== null) {
             let xuiModalOpen = document.querySelector('[xui-modal="' + modalOpen + '"]');
             if (xuiModalOpen !== null) {
-                xuiModalOpen.style.transform = "scale(1)";
+                xuiModalOpen.removeAttribute("open");
+                void xuiModalOpen.offsetWidth;
+                xuiModalOpen.setAttribute("open", true);
             }
             let xuiBody = document.querySelector('body');
             if (xuiBody !== null) {
@@ -57,7 +70,9 @@ let modal = () => {
         if (modalClose !== null) {
             let xuiModalClose = document.querySelector('[xui-modal="' + modalClose + '"]');
             if (xuiModalClose !== null) {
-                xuiModalClose.style.transform = "scale(0)";
+                xuiModalClose.removeAttribute("open");
+                void xuiModalClose.offsetWidth;
+                xuiModalClose.setAttribute("open", false);
             }
             let xuiBody = document.querySelector('body');
             if (xuiBody !== null) {
@@ -783,13 +798,17 @@ let xui = {
         show: (name) => {
             let modalName = document.querySelector("[xui-modal=\"" + name + "\"]");
             if (modalName !== null) {
-                modalName.style.transform = "scale(1)";
+                modalName.removeAttribute("open");
+                void modalName.offsetWidth;
+                modalName.setAttribute("open", true);
             }
         },
         hide: (name) => {
             let modalName = document.querySelector("[xui-modal=\"" + name + "\"]");
             if (modalName !== null) {
-                modalName.style.transform = "scale(0)";
+                modalName.removeAttribute("open");
+                void modalName.offsetWidth;
+                modalName.setAttribute("open", false);
             }
         }
     }
