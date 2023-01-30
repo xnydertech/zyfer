@@ -199,7 +199,10 @@ let navbarMenu = () => {
         let xuiDashboardAnimate = document.querySelector(".xui-dashboard.animate");
         let xuiNavbarLinksUrl = document.querySelectorAll(".xui-navbar .links a");
         document.addEventListener("click", function (e) {
-            if(e.target.className.includes('xui-dashboard') && e.target.className.includes('animate')){
+            while (e.target && !e.target.classList.contains('xui-dashboard') && !e.target.classList.contains('animate')) {
+                e.target = e.target.parentNode;
+            }
+            if(e.target){
                 xuiDashboard.classList.remove("animate");
                 xuiNavbarMenu.classList.remove("animate");
             }
