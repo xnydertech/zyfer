@@ -700,7 +700,7 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button;
+  /* -webkit-appearance: button; */
   cursor: pointer;
 }
 
@@ -761,7 +761,7 @@ textarea {
 }
 
 [type="search"] {
-  -webkit-appearance: textfield;
+  /* -webkit-appearance: textfield; */
   outline-offset: -2px;
 }
 
@@ -25200,11 +25200,13 @@ select:-webkit-autofill:focus {
 }
 
 .xui-alert.xui-anime[xui-placed="top-left"],
+.xui-alert.xui-anime[xui-placed="top-center"],
 .xui-alert.xui-anime[xui-placed="top-right"] {
   top: .5rem;
 }
 
 .xui-alert.xui-anime[xui-placed="bottom-left"],
+.xui-alert.xui-anime[xui-placed="bottom-center"],
 .xui-alert.xui-anime[xui-placed="bottom-right"] {
   bottom: .5rem;
 }
@@ -25217,6 +25219,12 @@ select:-webkit-autofill:focus {
 .xui-alert.xui-anime[xui-placed="top-left"],
 .xui-alert.xui-anime[xui-placed="bottom-left"] {
   left: .5rem;
+}
+
+.xui-alert.xui-anime[xui-placed="top-center"],
+.xui-alert.xui-anime[xui-placed="bottom-center"] {
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 
@@ -25287,9 +25295,36 @@ select:-webkit-autofill:focus {
   left: -100%;
 }
 
+.xui-alert[xui-placed="top-center"] {
+  top: -100%;
+}
+
+.xui-alert[xui-placed="bottom-center"] {
+  bottom: -100%;
+}
+
+.xui-alert[xui-placed="top-center"],
+.xui-alert[xui-placed="bottom-center"] {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .xui-alert[open="true"][xui-placed="bottom-left"] {
   bottom: .5rem;
   left: .5rem;
+}
+
+.xui-alert[open="true"][xui-placed="bottom-left"] {
+  bottom: .5rem;
+  left: .5rem;
+}
+
+.xui-alert[open="true"][xui-placed="top-center"] {
+  top: .5rem;
+}
+
+.xui-alert[open="true"][xui-placed="bottom-center"] {
+  bottom: .5rem;
 }
 
 
