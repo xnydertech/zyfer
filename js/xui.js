@@ -40,15 +40,37 @@ let hideSkeleton = (ele) => {
     }, 2500);
 };
 let modal = () => {
+    let modals = document.querySelectorAll('[xui-modal]');
+    setInterval(() => {
+        for (var i = 0; i < modals.length; i++) {
+            let display = modals[i].style.transform;
+            if (display === "scale(1)") {
+                let xuiBody = document.querySelector('body');
+                if (xuiBody !== null) {
+                    xuiBody.style.overflow = "hidden";
+                }
+            }
+            else {
+                let xuiBody = document.querySelector('body');
+                if (xuiBody !== null) {
+                    xuiBody.style.overflow = "auto";
+                }
+            }
+        }
+    }, 2000);
     document.onclick = function (e) {
+        const currentModal = e.target.getAttribute('xui-modal');
         if(e.target.hasAttribute("xui-modal")){
-            let modals = document.querySelectorAll("[xui-modal]");
             for(let i = 0; i < modals.length; i++){
                 let modalName = modals[i];
-                if (modalName !== null) {
-                    modalName.removeAttribute("open");
-                    void modalName.offsetWidth;
-                    modalName.setAttribute("open", false);
+                if(!modalName.hasAttribute('disable-click-on-outside')){
+                    if(currentModal == modalName.getAttribute('xui-modal')){
+                        if (modalName.hasAttribute('open')) {
+                            modalName.removeAttribute("open");
+                            void modalName.offsetWidth;
+                            modalName.setAttribute("open", false);
+                        }
+                    }
                 }
             }
         }
@@ -80,24 +102,6 @@ let modal = () => {
             }
         }
     };
-    let modals = document.querySelectorAll('.xui-modal');
-    setInterval(() => {
-        for (var i = 0; i < modals.length; i++) {
-            let display = modals[i].style.transform;
-            if (display === "scale(1)") {
-                let xuiBody = document.querySelector('body');
-                if (xuiBody !== null) {
-                    xuiBody.style.overflow = "hidden";
-                }
-            }
-            else {
-                let xuiBody = document.querySelector('body');
-                if (xuiBody !== null) {
-                    xuiBody.style.overflow = "auto";
-                }
-            }
-        }
-    }, 2000);
 };
 let isHidden = (el) => {
     var style = window.getComputedStyle(el);
@@ -199,13 +203,13 @@ let navbarMenu = () => {
         let xuiDashboardAnimate = document.querySelector(".xui-dashboard.animate");
         let xuiNavbarLinksUrl = document.querySelectorAll(".xui-navbar .links a");
         document.addEventListener("click", function (e) {
-            while (e.target && !e.target.classList.contains('xui-dashboard') && !e.target.classList.contains('animate')) {
-                e.target = e.target.parentNode;
-            }
-            if(e.target){
-                xuiDashboard.classList.remove("animate");
-                xuiNavbarMenu.classList.remove("animate");
-            }
+            // while (e.target && !e.target.classList.contains('xui-dashboard') && !e.target.classList.contains('animate')) {
+            //     e.target = e.target.parentNode;
+            // }
+            // if(e.target){
+            //     xuiDashboard.classList.remove("animate");
+            //     xuiNavbarMenu.classList.remove("animate");
+            // }
         });
         if (xuiNavbarMenu !== null) {
             xuiNavbarMenu.classList.remove("animate");
