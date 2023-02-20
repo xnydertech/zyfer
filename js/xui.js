@@ -41,6 +41,25 @@ let hideSkeleton = (ele) => {
 };
 let modal = () => {
     let modals = document.querySelectorAll('[xui-modal]');
+    function getParents(el, parentSelector /* optional */) {
+
+        // If no parentSelector defined will bubble up all the way to *document*
+        if (parentSelector === undefined) {
+            parentSelector = document;
+        }
+    
+        var parents = [];
+        var p = el.parentNode;
+        
+        while (p !== parentSelector) {
+            var o = p;
+            parents.push(o);
+            p = o.parentNode;
+        }
+        parents.push(parentSelector); // Push that parentSelector you wanted to stop at
+        
+        return parents;
+    }
     setInterval(() => {
         for (var i = 0; i < modals.length; i++) {
             let display = modals[i].style.transform;
@@ -77,6 +96,14 @@ let modal = () => {
         const target = e.target;
         let modalOpen = target.getAttribute("xui-modal-open");
         let modalClose = target.getAttribute("xui-modal-close");
+        if(!modalOpen){
+            const parentNode = target.parentNode;
+            modalOpen = parentNode.getAttribute("xui-modal-open");
+        }
+        if(!modalClose){
+            const parentNode = target.parentNode;
+            modalClose = parentNode.getAttribute("xui-modal-close");
+        }
         if (modalOpen !== null) {
             let xuiModalOpen = document.querySelector('[xui-modal="' + modalOpen + '"]');
             if (xuiModalOpen !== null) {
