@@ -1668,17 +1668,17 @@ img {
 }
 
 .xui-btn-success, .xui-btn-success:hover {
-  background-color: #4BB543;
+  background-color: #5cb85c;
   color: #fff;
 }
 
 .xui-btn-warning, .xui-btn-warning:hover {
-  background-color: #eed202;
+  background-color: #f0ad4e;
   color: #fff;
 }
 
 .xui-btn-danger, .xui-btn-danger:hover {
-  background-color: #bb2124;
+  background-color: #d9534f;
   color: #fff;
 }
 
@@ -2342,7 +2342,7 @@ input[type="checkbox"] {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #E5E5E5;
+  background-color: #cccccc;
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 50px;
