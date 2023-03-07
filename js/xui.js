@@ -230,6 +230,8 @@ let navbarMenu = () => {
         let xuiDashboardAnimate = document.querySelector(".xui-dashboard.animate");
         let xuiNavbarLinksUrl = document.querySelectorAll(".xui-navbar .links a");
         document.addEventListener("click", function (e) {
+            console.log(e.target);
+            console.log(e.target.parentNode);
             while (e.target && !e.target.classList.contains('xui-dashboard') && !e.target.classList.contains('animate')) {
                 e.target = e.target.parentNode;
             }
